@@ -1,1 +1,18 @@
-<router-outlet></router-outlet>
+<!-- Header -->
+<div class="h-16">
+  <div *ngIf="!logedIn" class="text-right">
+    <button class="auth-buttons" routerLink="/login">Login</button>
+    <button class="auth-buttons" routerLink="/signup">Signup</button>
+  </div>
+  <div *ngIf="logedIn" class="text-right">
+    <button class="auth-buttons">Log Out</button>
+  </div>
+</div>
+
+<!-- Main -->
+<div>
+  <router-outlet></router-outlet>
+</div>
+
+<!-- Footer -->
+<div></div>

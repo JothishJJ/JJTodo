@@ -4,3 +4,12 @@
 @tailwind utilities;
 
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+
+@layer components {
+  .auth-buttons {
+    @apply px-6 h-10 uppercase font-semibold 
+    tracking-wider border-2 border-black 
+    bg-teal-400 text-black m-1
+    hover:bg-teal-950 hover:text-teal-400;
+  }
+}

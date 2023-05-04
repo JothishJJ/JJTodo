@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   title = 'JJTodo';
+  logedIn = false;
 
   constructor(public router: Router) {}
 
