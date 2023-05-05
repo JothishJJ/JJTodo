@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import {faClipboardCheck} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -15,4 +17,9 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.router.navigate(['/home']);
   }
+
+  // Fa icons
+  faInstagram = faInstagram;
+  faTwitter = faTwitter;
+  faClipboardCheck = faClipboardCheck;
 }

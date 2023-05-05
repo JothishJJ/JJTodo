@@ -1,0 +1,10 @@
+@tailwind components;
+
+@layer components {
+  .header {
+    @apply h-20 bg-teal-600 py-4 top-0 fixed w-[100%] columns-2 px-96;
+  }
+  .footer {
+    @apply bg-gray-100 h-40 text-center px-96 py-16;
+  }
+}

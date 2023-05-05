@@ -1,11 +1,18 @@
 <!-- Header -->
-<div class="h-20 bg-teal-800 py-4 top-0 fixed w-[100%]">
-  <div *ngIf="!logedIn" class="text-right">
-    <button class="auth-buttons" routerLink="/login">Login</button>
-    <button class="auth-buttons" routerLink="/signup">Signup</button>
-  </div>
-  <div *ngIf="logedIn" class="text-right">
-    <button class="auth-buttons">Log Out</button>
+<div class="header">
+  <p class="text-white text-4xl pt-1">
+    <a routerLink="/home">
+      <fa-icon [icon]="faClipboardCheck"></fa-icon> JJTodo
+    </a>
+  </p>
+  <div>
+    <div *ngIf="!logedIn" class="text-right">
+      <button class="auth-buttons" routerLink="/login">Login</button>
+      <button class="auth-buttons" routerLink="/signup">Signup</button>
+    </div>
+    <div *ngIf="logedIn" class="text-right">
+      <button class="auth-buttons">Log Out</button>
+    </div>
   </div>
 </div>
 
@@ -15,4 +22,14 @@
 </div>
 
 <!-- Footer -->
-<div></div>
+<div class="footer">
+  <p class="text-gray-500 text-sm mb-4">© @jothishjj 2023</p>
+  <div class="space-x-4">
+    <a href="https://instagram.com/jothish_jj"
+      ><fa-icon [icon]="faInstagram" size="2x"></fa-icon
+    ></a>
+    <a href="https://twitter.com/jothishjj"
+      ><fa-icon [icon]="faTwitter" size="2x"></fa-icon
+    ></a>
+  </div>
+</div>
