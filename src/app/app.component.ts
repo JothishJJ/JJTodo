@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
-import { HostListener } from '@angular/core';
 
 // Fa faIcons
 import { faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import {
-  faClipboardCheck,
-  faBars,
-  faArrowUp,
-} from '@fortawesome/free-solid-svg-icons';
+import { faClipboardCheck, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
 // Components
 import { HeaderComponent } from './components/header/header.component';
@@ -19,11 +14,6 @@ import { HeaderComponent } from './components/header/header.component';
 })
 export class AppComponent {
   title = 'JJTodo';
-  logedIn = false;
-
-  screenHeight: number | undefined;
-  screenWidth: number | undefined;
-  mobile: boolean | undefined;
 
   collapsed = false;
 
@@ -31,32 +21,15 @@ export class AppComponent {
   faInstagram = faInstagram;
   faTwitter = faTwitter;
   faClipboardCheck = faClipboardCheck;
-  faBars = faBars;
   faArrowUp = faArrowUp;
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event?: any) {
-    this.screenHeight = window.innerHeight;
-    this.screenWidth = window.innerWidth;
-
-    if (this.screenWidth < 1280) {
-      this.mobile = true;
-    }
-  }
-
-  collapse(): void {
-    this.collapsed = !this.collapsed;
-  }
 
   scroll(): void {
     window.scroll({
       top: 0,
       left: 0,
-      behavior: 'smooth'
-    })
+      behavior: 'smooth',
+    });
   }
 
-  constructor() {
-    this.onResize();
-  }
+  constructor() {}
 }

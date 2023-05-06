@@ -1,0 +1,44 @@
+<!-- Header -->
+<nav>
+    <div class="header">
+      <p class="text-white text-4xl pt-1 xl:pt-0">
+        <a routerLink="/home">JJTodo</a>
+      </p>
+      <div class="text-right min-xl:scale-0">
+        <button
+          *ngIf="mobile"
+          class="pt-1"
+          data-collapse-toggle="menu"
+          (click)="collapse()"
+        >
+          <fa-icon [icon]="faBars" size="2x"></fa-icon>
+        </button>
+      </div>
+  
+      <!-- Default auth buttons -->
+      <div class="xl:scale-0">
+        <div *ngIf="!logedIn" class="text-right">
+          <button class="auth-buttons" routerLink="/login">Login</button>
+          <button class="auth-buttons" routerLink="/signup">Signup</button>
+        </div>
+        <div *ngIf="logedIn" class="text-right">
+          <button class="auth-buttons">Log Out</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- mobile -->
+  <div
+    id="menu"
+    class="bg-teal-100 mt-20 h-screen min-xl:scale-0 gap-y-8 text-center"
+    *ngIf="collapsed"
+  >
+    <div *ngIf="!logedIn" class="grid grid-rows-1">
+      <a class="auth-buttons text-3xl">Login</a>
+      <a class="auth-buttons text-3xl">Signup</a>
+    </div>
+    <div *ngIf="logedIn">
+      <a class="auth-buttons text-3xl">Log Out</a>
+    </div>
+  </div>
