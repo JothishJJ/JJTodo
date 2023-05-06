@@ -4,9 +4,6 @@ import { Component } from '@angular/core';
 import { faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faClipboardCheck, faArrowUp } from '@fortawesome/free-solid-svg-icons';
 
-// Components
-import { HeaderComponent } from './components/header/header.component';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
