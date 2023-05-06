@@ -9,9 +9,6 @@ import {
   faArrowUp,
 } from '@fortawesome/free-solid-svg-icons';
 
-// Components
-import { HeaderComponent } from './components/header/header.component';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -52,8 +49,8 @@ export class AppComponent {
     window.scroll({
       top: 0,
       left: 0,
-      behavior: 'smooth'
-    })
+      behavior: 'smooth',
+    });
   }
 
   constructor() {
