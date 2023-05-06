@@ -3,7 +3,11 @@ import { HostListener } from '@angular/core';
 
 // Fa faIcons
 import { faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
-import { faClipboardCheck, faBars } from '@fortawesome/free-solid-svg-icons';
+import {
+  faClipboardCheck,
+  faBars,
+  faArrowUp,
+} from '@fortawesome/free-solid-svg-icons';
 
 // Components
 import { HeaderComponent } from './components/header/header.component';
@@ -28,6 +32,7 @@ export class AppComponent {
   faTwitter = faTwitter;
   faClipboardCheck = faClipboardCheck;
   faBars = faBars;
+  faArrowUp = faArrowUp;
 
   @HostListener('window:resize', ['$event'])
   onResize(event?: any) {
@@ -42,6 +47,15 @@ export class AppComponent {
   collapse(): void {
     this.collapsed = !this.collapsed;
   }
+
+  scroll(): void {
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    })
+  }
+
   constructor() {
     this.onResize();
   }

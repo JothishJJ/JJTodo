@@ -54,7 +54,13 @@
 <footer *ngIf="!collapsed">
   <div class="footer">
     <p class="text-gray-500 text-sm mb-4">© @jothishjj 2023</p>
-    <a href="#top">Back to top</a>
+    <div class="text-right">
+      <a
+        (click)="scroll()"
+        class="bg-teal-400 border-2 border-black p-2 hover:text-teal-400 hover:bg-black capitalize"
+        >Back to top <fa-icon [icon]="faArrowUp"></fa-icon
+      ></a>
+    </div>
     <div class="space-x-4">
       <a href="https://instagram.com/jothish_jj"
         ><fa-icon [icon]="faInstagram" size="2x"></fa-icon
