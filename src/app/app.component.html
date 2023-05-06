@@ -36,7 +36,7 @@
 >
   <div *ngIf="!logedIn" class="grid grid-rows-1">
     <a class="auth-buttons text-3xl">Login</a>
-    <a class="auth-buttons text-3xl mb-[100rem]">Signup</a>
+    <a class="auth-buttons text-3xl">Signup</a>
   </div>
   <div *ngIf="logedIn">
     <a class="auth-buttons text-3xl">Log Out</a>
@@ -46,12 +46,12 @@
 <app-header></app-header>
 
 <!-- Main -->
-<main>
+<main *ngIf="!collapsed">
   <router-outlet></router-outlet>
 </main>
 
 <!-- Footer -->
-<footer>
+<footer *ngIf="!collapsed">
   <div class="footer">
     <p class="text-gray-500 text-sm mb-4">© @jothishjj 2023</p>
     <a href="#top">Back to top</a>
