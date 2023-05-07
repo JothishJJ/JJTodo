@@ -1,20 +1,52 @@
-<div class="min-xl:px-96 text-center xl:px-20">
+<div class="min-xl:px-96 text-center xl:px-12">
   <h1 class="text-5xl xl:text-4xl min-xl:my-32 xl:mt-32 xl:mb-16">
     Login Page
   </h1>
   <form>
     <div class="h-screen">
       <div
-        class="grid grid-cols-1 mt-4 mb-24 min-xl:px-80 min-xl:gap-y-2 xl:gap-y-4"
+        class="min-xl:grid min-xl:grid-cols-2 mt-4 mb-24 min-xl:gap-y-2 xl:gap-y-4"
       >
-        <label for="email" class="text-left">Email</label>
-        <input type="emai" id="email" placeholder="example@example.com" />
+        <div class="text-left grid grid-cols-1 min-xl:px-20">
+          <label for="email">Email</label>
+          <input
+            type="emai"
+            id="email"
+            placeholder="example@example.com"
+            class="input"
+          />
 
-        <label for="password" class="text-left">Password</label>
-        <input type="password" id="password" placeholder="·······" />
+          <br />
 
-        <button type="submit" class="mt-8 mb-4">Submit</button>
-        <button>Login with Google</button>
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="·······"
+            class="input"
+          />
+
+          <a href="#" class="text-sm mt-4 mb-4">Forgot password?</a>
+
+          <button type="submit" class="mt-16 mb-4 sign-btn bg-teal-500">
+            SUBMIT
+          </button>
+
+          <hr class="h-px my-8 border-0 bg-gray-400" />
+
+          <button class="sign-btn bg-white">
+            <fa-icon [icon]="faGoogle" class="text-blue-500"></fa-icon> Login
+            with Google
+          </button>
+          <button class="sign-btn bg-white group">
+            <fa-icon [icon]="faApple" class="group-hover:text-white"></fa-icon>
+            Login with Apple
+          </button>
+        </div>
+        <h2 class="xl:scale-0 text-5xl mt-16 text-center font-display">
+          Login to get access <br />
+          to the #1 todolist in the market
+        </h2>
       </div>
     </div>
   </form>
