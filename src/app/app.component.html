@@ -4,9 +4,8 @@
     <p class="text-white text-4xl pt-1 xl:pt-0 font-display">
       <a routerLink="/home">JJTodo</a>
     </p>
-    <div class="text-right min-xl:scale-0">
+    <div class="text-right min-xl:hidden">
       <button
-        *ngIf="mobile"
         class="pt-1"
         data-collapse-toggle="menu"
         (click)="collapse()"
