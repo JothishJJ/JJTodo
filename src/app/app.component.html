@@ -31,12 +31,16 @@
 <!-- mobile -->
 <div
   id="menu"
-  class="bg-teal-100 mt-20 h-screen min-xl:scale-0 gap-y-8 text-center"
+  class="bg-teal-100 pt-[40vh] h-screen min-xl:scale-0 text-center"
   *ngIf="collapsed"
 >
-  <div *ngIf="!logedIn" class="grid grid-rows-1">
-    <a class="auth-buttons text-3xl">Login</a>
-    <a class="auth-buttons text-3xl">Signup</a>
+  <div *ngIf="!logedIn" class="grid grid-rows-1 gap-y-8">
+    <a class="auth-buttons text-3xl" routerLink="/login" (click)="collapse()"
+      >Login</a
+    >
+    <a class="auth-buttons text-3xl" routerLink="/signup" (click)="collapse()"
+      >Signup</a
+    >
   </div>
   <div *ngIf="logedIn">
     <a class="auth-buttons text-3xl">Log Out</a>
