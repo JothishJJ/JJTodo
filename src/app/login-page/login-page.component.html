@@ -26,7 +26,7 @@
             class="input"
           />
 
-          <a href="#" class="text-sm mt-4 mb-4">Forgot password?</a>
+          <a href="#" class="text-sm my-4 hover:underline">Forgot password?</a>
 
           <button type="submit" class="mt-16 mb-4 sign-btn bg-teal-500">
             SUBMIT
@@ -42,6 +42,11 @@
             <fa-icon [icon]="faApple" class="group-hover:text-white"></fa-icon>
             Login with Apple
           </button>
+
+          <p class="text-sm mt-4">
+            Don't have an account?
+            <a routerLink="/signup" class="hover:underline">Sign up</a>
+          </p>
         </div>
         <h2 class="xl:scale-0 text-5xl mt-16 text-center font-display">
           Login to get access <br />
