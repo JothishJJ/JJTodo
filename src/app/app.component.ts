@@ -40,11 +40,13 @@ export class AppComponent {
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
+  onResize(event?: any) {
     if (window.innerWidth < 1280) {
       this.mobile = true;
     }
   }
 
-  constructor() {}
+  constructor() {
+    this.onResize();
+  }
 }
