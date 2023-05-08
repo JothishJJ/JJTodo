@@ -11,19 +11,19 @@
     </div>
 
     <!-- Default auth buttons -->
-    <div class="xl:scale-0">
-      <div *ngIf="!logedIn" class="text-right">
+    <div class="xl:scale-0 text-right">
+      <div *ngIf="!logedIn">
         <button class="auth-buttons" routerLink="/login">Login</button>
         <button class="auth-buttons" routerLink="/signup">Signup</button>
       </div>
-      <div *ngIf="logedIn" class="text-right">
+      <div *ngIf="logedIn">
         <button class="auth-buttons">Log Out</button>
       </div>
     </div>
   </div>
 </nav>
 
-<!-- mobile -->
+<!-- mobile nav -->
 <div id="menu" class="mobile-section" *ngIf="collapsed">
   <div *ngIf="!logedIn" class="grid grid-rows-1 gap-y-8">
     <a class="auth-buttons" routerLink="/login" (click)="collapse()">Login</a>

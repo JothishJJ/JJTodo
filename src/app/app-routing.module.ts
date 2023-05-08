@@ -9,14 +9,13 @@ import { TodolistComponent } from './todolist/todolist.component';
 const routes: Routes = [
   // Redirects
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: '**', redirectTo: '/404', pathMatch: 'full' },
 
   // Pages
   { path: 'home', component: HomePageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: SignupPageComponent },
   { path: 'app', component: TodolistComponent },
-  { path: '404', component: PageNotFoundComponent },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
