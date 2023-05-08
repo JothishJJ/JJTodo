@@ -7,10 +7,13 @@
 
 @layer components {
   .auth-buttons {
-    @apply px-6 h-10 uppercase font-semibold 
+    @apply px-6 py-3 uppercase font-semibold 
     tracking-wider border-2 border-black 
     bg-teal-400 text-black m-1
     transition hover:ease-in
-    hover:bg-black hover:text-teal-400;
+    hover:bg-black hover:text-teal-400
+    min-md:text-4xl min-xl:text-lg 
+    min-xl:py-0 min-xl:h-10 sm:py-0
+    sm:h-10;
   }
 }
