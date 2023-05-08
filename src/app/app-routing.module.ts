@@ -4,13 +4,19 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { SignupPageComponent } from './signup-page/signup-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { TodolistComponent } from './todolist/todolist.component';
 
 const routes: Routes = [
+  // Redirects
   { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', redirectTo: '/404', pathMatch: 'full' },
+
+  // Pages
   { path: 'home', component: HomePageComponent },
   { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: SignupPageComponent },
-  { path: '**', component: PageNotFoundComponent },
+  { path: 'app', component: TodolistComponent },
+  { path: '404', component: PageNotFoundComponent },
 ];
 
 @NgModule({
