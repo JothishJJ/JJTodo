@@ -1,0 +1,26 @@
+@tailwind components;
+
+@layer components {
+  .sign-btn {
+    @apply border-2 border-black text-2xl py-1 tracking-wider 
+    text-black m-1 font-semibold
+    transition hover:ease-in
+    hover:bg-black hover:text-teal-400;
+  }
+  .input {
+    @apply h-8 px-1 border-2;
+  }
+
+  .heading {
+    @apply text-5xl xl:text-4xl min-xl:py-32 xl:pt-32 xl:pb-16;
+  }
+
+  .signup-section {
+    @apply min-xl:grid min-xl:grid-cols-2 mt-4 mb-24 
+    min-xl:gap-y-2 xl:gap-y-4;
+  }
+
+  .second-heading {
+    @apply xl:scale-0 text-5xl mt-16 text-center font-display;
+  }
+}

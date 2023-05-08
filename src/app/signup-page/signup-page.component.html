@@ -1,1 +1,52 @@
-<p>signup-page works!</p>
+<div class="min-xl:px-96 text-center xl:px-12">
+  <h1 class="heading">Signup Page</h1>
+  <form>
+    <div class="h-screen">
+      <div class="signup-section">
+        <div class="text-left grid grid-cols-1 min-xl:px-20">
+          <label for="email">Email</label>
+          <input
+            type="emai"
+            id="email"
+            placeholder="example@example.com"
+            class="input"
+          />
+
+          <br />
+
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            placeholder="·······"
+            class="input mb-4"
+          />
+
+          <button type="submit" class="mt-16 mb-4 sign-btn bg-teal-500">
+            SUBMIT
+          </button>
+
+          <hr class="h-px my-8 border-0 bg-gray-400" />
+
+          <button class="sign-btn bg-white">
+            <fa-icon [icon]="faGoogle" class="text-blue-500"></fa-icon> Signup
+            with Google
+          </button>
+          <button class="sign-btn bg-white group">
+            <fa-icon [icon]="faApple" class="group-hover:text-white"></fa-icon>
+            Signup with Apple
+          </button>
+
+          <p class="text-sm mt-4">
+            Already have an account?
+            <a routerLink="/login" class="hover:underline">Log in</a>
+          </p>
+        </div>
+        <h2 class="second-heading">
+          Signup to get access <br />
+          to the #1 todolist in the market
+        </h2>
+      </div>
+    </div>
+  </form>
+</div>
