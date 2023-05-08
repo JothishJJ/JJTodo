@@ -4,7 +4,7 @@
     <div class="h-screen">
       <div class="login-section">
         <div class="text-left grid grid-cols-1 min-xl:px-20">
-          <label for="email">Email</label>
+          <label for="email" class="label">Email</label>
           <input
             type="emai"
             id="email"
@@ -14,7 +14,7 @@
 
           <br />
 
-          <label for="password">Password</label>
+          <label for="password" class="label">Password</label>
           <input
             type="password"
             id="password"
@@ -22,13 +22,17 @@
             class="input"
           />
 
-          <a href="#" class="text-sm my-4 hover:underline">Forgot password?</a>
+          <a
+            href="#"
+            class="forgot-password"
+            >Forgot password?</a
+          >
 
           <button type="submit" class="mt-16 mb-4 sign-btn bg-teal-500">
             SUBMIT
           </button>
 
-          <hr class="h-px my-8 border-0 bg-gray-400" />
+          <hr class="h-px my-8 border-0 bg-gray-400 min-md:my-16 min-xl:my-4" />
 
           <button class="sign-btn bg-white">
             <fa-icon [icon]="faGoogle" class="text-blue-500"></fa-icon> Login
@@ -39,7 +43,7 @@
             Login with Apple
           </button>
 
-          <p class="text-sm mt-4">
+          <p class="text-sm min-md:text-2xl min-xl:text-sm mt-4">
             Don't have an account?
             <a routerLink="/signup" class="hover:underline">Sign up</a>
           </p>
