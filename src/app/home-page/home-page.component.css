@@ -1,0 +1,17 @@
+@tailwind components;
+
+@layer components {
+  .title {
+    @apply min-xl:text-6xl font-display font-bold text-black 
+    min-xl:mt-80 xl:mt-32 min-xl:px-40 xl:px-8 xl:text-4xl;
+  }
+
+  .description {
+    @apply min-xl:text-xl xl:text-sm mt-8 min-xl:px-80 xl:px-8;
+  }
+
+  .review-section {
+    @apply bg-teal-100 min-xl:px-96 py-16 text-center 
+    min-xl:columns-2 xl:mt-14 min-xl:mt-40;
+  }
+}
