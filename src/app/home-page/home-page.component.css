@@ -2,16 +2,16 @@
 
 @layer components {
   .title {
-    @apply min-xl:text-6xl font-display font-bold text-black 
-    min-xl:mt-80 xl:mt-32 min-xl:px-40 xl:px-8 xl:text-4xl;
+    @apply min-md:text-8xl min-xl:text-6xl font-display font-bold text-black 
+    mt-[35vh] min-xl:px-40 xl:px-8 text-4xl;
   }
 
   .description {
-    @apply min-xl:text-xl xl:text-sm mt-8 min-xl:px-80 xl:px-8;
+    @apply min-md:text-2xl sm:text-sm xl:mt-20 mt-16 min-xl:px-80 min-md:px-40 px-8;
   }
 
   .review-section {
     @apply bg-teal-100 min-xl:px-96 py-16 text-center 
-    min-xl:columns-2 xl:mt-14 min-xl:mt-40;
+    min-xl:columns-2 xl:mt-20 min-xl:mt-40 min-md:text-4xl;
   }
 }
