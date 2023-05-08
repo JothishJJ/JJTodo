@@ -7,7 +7,7 @@
   }
 
   .description {
-    @apply min-md:text-3xl sm:text-sm xl:mt-20 mt-16 min-xl:px-72 min-md:px-40 px-8;
+    @apply min-md:text-3xl min-xl:text-xl sm:text-sm xl:mt-20 mt-16 min-xl:px-72 min-md:px-40 px-8;
   }
 
   .review-section {
