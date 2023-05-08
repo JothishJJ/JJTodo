@@ -2,14 +2,26 @@
 
 @layer components {
   .header {
-    @apply h-20  bg-teal-600 py-4 top-0 fixed w-full columns-2 min-xl:px-96 xl:px-8;
+    @apply h-20  bg-teal-600 py-4 top-0 fixed w-full columns-2 
+    min-xl:px-96 xl:px-8;
   }
 
   .footer {
-    @apply bg-gray-100 h-40 text-center w-full min-xl:px-96 py-16 xl:px-8;
+    @apply bg-gray-100 h-40 text-center w-full min-xl:px-96
+    py-16 xl:px-8;
   }
 
   .logo {
     @apply text-white text-4xl pt-1 xl:pt-0 font-display;
+  }
+
+  .mobile-section {
+    @apply bg-teal-100 pt-[40vh] h-screen min-xl:scale-0 
+    text-center text-3xl px-16;
+  }
+
+  .back-to-top-btn {
+    @apply bg-teal-400 border-2 border-black p-2 
+    hover:text-teal-400 hover:bg-black hover:cursor-pointer;
   }
 }

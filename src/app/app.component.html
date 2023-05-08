@@ -5,11 +5,7 @@
       <a routerLink="/home">JJTodo</a>
     </p>
     <div class="text-right min-xl:hidden">
-      <button
-        class="pt-1"
-        data-collapse-toggle="menu"
-        (click)="collapse()"
-      >
+      <button class="pt-1" data-collapse-toggle="menu" (click)="collapse()">
         <fa-icon [icon]="faBars" size="2x"></fa-icon>
       </button>
     </div>
@@ -28,21 +24,13 @@
 </nav>
 
 <!-- mobile -->
-<div
-  id="menu"
-  class="bg-teal-100 pt-[40vh] h-screen min-xl:scale-0 text-center"
-  *ngIf="collapsed"
->
+<div id="menu" class="mobile-section" *ngIf="collapsed">
   <div *ngIf="!logedIn" class="grid grid-rows-1 gap-y-8">
-    <a class="auth-buttons text-3xl" routerLink="/login" (click)="collapse()"
-      >Login</a
-    >
-    <a class="auth-buttons text-3xl" routerLink="/signup" (click)="collapse()"
-      >Signup</a
-    >
+    <a class="auth-buttons" routerLink="/login" (click)="collapse()">Login</a>
+    <a class="auth-buttons" routerLink="/signup" (click)="collapse()">Signup</a>
   </div>
   <div *ngIf="logedIn">
-    <a class="auth-buttons text-3xl">Log Out</a>
+    <a class="auth-buttons">Log Out</a>
   </div>
 </div>
 
@@ -56,9 +44,7 @@
   <div class="footer">
     <p class="text-gray-500 text-sm mb-4">© @jothishjj 2023</p>
     <div class="text-right">
-      <a
-        (click)="scroll()"
-        class="bg-teal-400 border-2 border-black p-2 hover:text-teal-400 hover:bg-black hover:cursor-pointer"
+      <a (click)="scroll()" class="back-to-top-btn"
         >Back to top <fa-icon [icon]="faArrowUp"></fa-icon
       ></a>
     </div>
