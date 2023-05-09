@@ -3,10 +3,12 @@
   <ul>
     <li
       *ngFor="let task of tasks"
-      class="border-2 border-black rounded-md mb-4 px-3 py-4"
+      class="border-2 border-gray-400 rounded-md mb-4 px-3 py-4"
     >
       <input type="checkbox" class="peer accent-teal-800" />
-      <label class="peer-checked:text-gray-600 peer-checked:line-through text-lg">
+      <label
+        class="peer-checked:text-gray-600 peer-checked:line-through text-lg"
+      >
         {{ task.title }}
       </label>
       <br />

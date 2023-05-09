@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TaskComponent implements OnInit {
   // TODO: implement firebase here and delete this
-  @Input() tasks?: { title: string; description: string }[];
+  @Input() tasks?: { title: string; description?: string }[];
 
   constructor() {}
 

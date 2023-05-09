@@ -1,0 +1,11 @@
+@tailwind components;
+
+@layer components {
+  .task-cancel-btn {
+    @apply border-2 border-black bg-white hover:bg-black hover:text-white w-20;
+  }
+
+  .task-add-btn {
+    @apply border-2 border-black bg-teal-500 hover:bg-black hover:text-teal-500 w-20;
+  }
+}

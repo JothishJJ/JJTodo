@@ -33,7 +33,7 @@ export class TodolistComponent implements OnInit {
   // TODO: implement firebase and delete this
 
   taskList = [
-    { title: 'Hello', description: 'hifjasoifj' },
+    { title: 'Hello' },
     { title: '2nd task', description: 'ufoiafiajiofdjaiodfj asid' },
   ];
 }
