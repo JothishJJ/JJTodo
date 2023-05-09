@@ -1,6 +1,8 @@
 <!-- TODO: Make a todolist component -->
 <div class="mt-[10vh] px-96">
-  <app-task></app-task>
+
+  <!-- TODO: implement firebase here and delete this -->
+  <app-task [tasks]="taskList"></app-task>
 </div>
 
 <div class="px-96">
@@ -21,7 +23,11 @@
     <input type="text" placeholder="Title" />
     <input type="text" placeholder="Description" />
 
-    <button type="submit" (click)="addTask($event)" class="border-2 border-black bg-teal-500 w-20">
+    <button
+      type="submit"
+      (click)="addTask($event)"
+      class="border-2 border-black bg-teal-500 w-20"
+    >
       <fa-icon [icon]="faPlus" size="1x"></fa-icon> Add
     </button>
   </form>

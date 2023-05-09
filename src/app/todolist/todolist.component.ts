@@ -23,4 +23,11 @@ export class TodolistComponent implements OnInit {
   addTask(e: any) {
     e.preventDefault();
   }
+
+  // TODO: implement firebase and delete this
+
+  taskList = [
+    { title: 'Hello', description: 'hifjasoifj' },
+    { title: '2nd task', description: 'ufoiafiajiofdjaiodfj asid' },
+  ];
 }
