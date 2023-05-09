@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
-import { filter } from 'rxjs/operators';
-
 // Fa faIcons
 import { faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import {
@@ -19,7 +17,7 @@ import {
 export class AppComponent {
   title = 'JJTodo';
 
-  logedIn: boolean = false;
+  logedIn: boolean = true;
   collapsed: boolean = false;
 
   currentPage?: string;
@@ -49,5 +47,9 @@ export class AppComponent {
         this.currentPage = router.url;
       }
     });
+
+    if(this.logedIn) {
+      router.navigate(['/app']);
+    }
   }
 }
