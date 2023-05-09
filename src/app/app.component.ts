@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+
+import { filter } from 'rxjs/operators';
 
 // Fa faIcons
 import { faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
@@ -19,6 +22,8 @@ export class AppComponent {
   logedIn: boolean = false;
   collapsed: boolean = false;
 
+  currentPage?: string;
+
   // Fa icons
   faInstagram = faInstagram;
   faTwitter = faTwitter;
@@ -38,5 +43,11 @@ export class AppComponent {
     this.collapsed = !this.collapsed;
   }
 
-  constructor() {}
+  constructor(private router: Router) {
+    router.events.subscribe((val) => {
+      if (val instanceof NavigationEnd) {
+        this.currentPage = router.url;
+      }
+    });
+  }
 }
