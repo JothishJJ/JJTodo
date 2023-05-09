@@ -12,6 +12,7 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TodolistComponent } from './todolist/todolist.component';
+import { TaskComponent } from './todolist/task/task.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { TodolistComponent } from './todolist/todolist.component';
     PageNotFoundComponent,
     SignupPageComponent,
     TodolistComponent,
+    TaskComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [],
