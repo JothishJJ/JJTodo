@@ -22,6 +22,12 @@ export class TodolistComponent implements OnInit {
 
   addTask(e: any) {
     e.preventDefault();
+    this.hideForm(e);
+  }
+
+  hideForm(e: any) {
+    e.preventDefault();
+    this.formBtn = false;
   }
 
   // TODO: implement firebase and delete this
