@@ -1,0 +1,10 @@
+@tailwind components;
+
+@layer components {
+  .home-btn {
+    @apply border-2 border-black uppercase font-semibold
+    px-2 py-1 bg-teal-400 hover:bg-black hover:text-teal-400
+    mt-[20vh] min-md:text-4xl min-xl:text-xl
+    min-md:py-3 min-xl:py-1;
+  }
+}
