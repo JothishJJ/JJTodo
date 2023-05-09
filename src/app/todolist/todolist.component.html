@@ -3,5 +3,29 @@
   <app-task></app-task>
 </div>
 
+<div class="px-96">
+  <button
+    class="hover:text-teal-400"
+    [ngClass]="formBtn ? 'scale-0' : 'scale-100'"
+    (click)="addForm()"
+  >
+    <fa-icon [icon]="faPlus" size="1x"></fa-icon> Add Task
+  </button>
+
+  <form
+    action="submit"
+    [ngClass]="!formBtn ? 'scale-0' : 'scale-100'"
+    class="grid grid-cols-1 gap-y-2"
+  >
+    <hr class="border-0 bg-black h-px" />
+    <input type="text" placeholder="Title" />
+    <input type="text" placeholder="Description" />
+
+    <button type="submit" (click)="addTask($event)" class="border-2 border-black bg-teal-500 w-20">
+      <fa-icon [icon]="faPlus" size="1x"></fa-icon> Add
+    </button>
+  </form>
+</div>
+
 <!-- TODO: Setup Todo list UI -->
 <p>todolist works!</p>
