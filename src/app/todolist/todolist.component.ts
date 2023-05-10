@@ -20,9 +20,19 @@ export class TodolistComponent implements OnInit {
     this.formBtn = true;
   }
 
+  newTitle?: string;
+  newDescription?: string;
+
   addTask(e: any) {
     e.preventDefault();
     this.hideForm(e);
+    const newItem = {
+      title: this.newTitle,
+      description: this.newDescription,
+    };
+    this.tasks.push(newItem);
+    this.newTitle = '';
+    this.newDescription = '';
   }
 
   hideForm(e: any) {
@@ -32,7 +42,7 @@ export class TodolistComponent implements OnInit {
 
   // TODO: implement firebase and delete this
 
-  taskList = [
+  tasks: any = [
     { title: 'Hello' },
     { title: '2nd task', description: 'ufoiafiajiofdjaiodfj asid' },
   ];

@@ -17,10 +17,11 @@
       </label>
     </div>
     <button
+      (click)="delete(task.title)"
       class="border-2 border-black bg-red-500 px-2 py-1 hover:bg-black hover:text-red-500 uppercase font-semibold"
     >
       <fa-icon [icon]="faTrash"></fa-icon>
-      Close
+      Delete
     </button>
   </li>
 </ul>

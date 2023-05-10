@@ -13,6 +13,10 @@ export class TaskComponent implements OnInit {
 
   faTrash = faTrash;
 
+  delete(title: string): void {
+    this.tasks = this.tasks?.filter((item) => item.title !== title);
+  }
+
   constructor() {}
 
   ngOnInit(): void {}
