@@ -2,7 +2,12 @@ import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 // Fa faIcons
-import { faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import {
+  faInstagram,
+  faTwitter,
+  faGithub,
+} from '@fortawesome/free-brands-svg-icons';
+
 import {
   faClipboardCheck,
   faArrowUp,
@@ -28,6 +33,7 @@ export class AppComponent {
   faClipboardCheck = faClipboardCheck;
   faArrowUp = faArrowUp;
   faBars = faBars;
+  faGithub = faGithub;
 
   scroll(): void {
     window.scroll({
