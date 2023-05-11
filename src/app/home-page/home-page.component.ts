@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 import { faApple, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
@@ -20,6 +20,47 @@ export class HomePageComponent implements OnInit {
   faStar = faStar;
   faGooglePlay = faGooglePlay;
   faGlobe = faGlobe;
+
+  isReviewVisible: boolean = false;
+  isTaskManagementVisible: boolean = false;
+  isRemeinderVisible: boolean = false;
+
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    const scrollPosition =
+      window.pageYOffset ||
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      0;
+
+    // For review
+    const elementOffset =
+      document.querySelector('.review')?.getBoundingClientRect().top || 0;
+    if (scrollPosition > elementOffset - window.innerHeight + 200) {
+      this.isReviewVisible = true; // Set the visibility flag to trigger the animation
+    } else {
+      this.isReviewVisible = false;
+    }
+
+    // For taskManagement
+    const taskManagementOffset =
+      document.querySelector('.task-management')?.getBoundingClientRect().top ||
+      0;
+    if (scrollPosition > taskManagementOffset - window.innerHeight + 200) {
+      this.isTaskManagementVisible = true; // Set the visibility flag to trigger the animation
+    } else {
+      this.isTaskManagementVisible = false;
+    }
+
+    // For Remeinder
+    const remeinderOffset =
+      document.querySelector('.remeinder')?.getBoundingClientRect().top || 0;
+    if (scrollPosition > remeinderOffset - window.innerHeight + 200) {
+      this.isRemeinderVisible = true; // Set the visibility flag to trigger the animation
+    } else {
+      this.isRemeinderVisible = false;
+    }
+  }
 
   constructor(private router: Router) {
     router.events.subscribe((val) => {

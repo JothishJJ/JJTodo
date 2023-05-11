@@ -16,3 +16,21 @@
     min-xl:text-lg;
   }
 }
+
+.slide-right-transition {
+  transition-property: transform;
+  transition-timing-function: ease-out;
+  transform: translateX(-100vh);
+  transition-duration: 1.5s;
+}
+
+.slide-left-transition {
+  transition-property: transform;
+  transition-timing-function: ease-out;
+  transform: translateX(200vh);
+  transition-duration: 2s;
+}
+
+.slide-right {
+  transform: translateX(0);
+}
