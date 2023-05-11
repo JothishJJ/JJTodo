@@ -17,7 +17,7 @@ import {
 export class AppComponent {
   title = 'JJTodo';
 
-  logedIn: boolean = true;
+  logedIn: boolean = false;
   collapsed: boolean = false;
 
   currentPage?: string;
@@ -47,9 +47,5 @@ export class AppComponent {
         this.currentPage = router.url;
       }
     });
-
-    if(this.logedIn) {
-      router.navigate(['/app']);
-    }
   }
 }

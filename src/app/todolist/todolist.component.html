@@ -4,9 +4,10 @@
   <app-task [tasks]="tasks"></app-task>
 </div>
 
-<div class="px-96">
+<div class="px-96 ">
+      
   <button
-    class="hover:text-teal-400"
+    class="hover:text-teal-400 pt-1"
     [ngClass]="formBtn ? 'scale-0' : 'scale-100'"
     (click)="addForm()"
   >
@@ -18,13 +19,26 @@
     class="grid grid-cols-1 gap-y-2"
   >
     <hr class="border-0 bg-black h-px" />
-    <input type="text" placeholder="Title" [(ngModel)]="newTitle" />
-    <input type="text" placeholder="Description" [(ngModel)]="newDescription" />
+    <input 
+      type="text" 
+      placeholder="Title" 
+      [(ngModel)]="newTitle" 
+      name="title" 
+    />
+    
+    <p class="text-red-500" *ngIf="showErr">*The Title is required</p>
+    
+    <input
+      type="text" 
+      placeholder="Description" 
+      [(ngModel)]="newDescription" 
+      name="description" 
+    />
 
     <div class="flex flex-col-1 gap-x-3">
       <button
         type="submit"
-        (click)="addTask($event)"
+        (click)="addTask()"
         class="task-add-btn"
       >
         <fa-icon [icon]="faPlus" size="1x"></fa-icon> Add
