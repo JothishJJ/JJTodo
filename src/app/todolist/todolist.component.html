@@ -14,13 +14,12 @@
   </button>
 
   <form
-    action="submit"
     [ngClass]="!formBtn ? 'scale-0' : 'scale-100'"
     class="grid grid-cols-1 gap-y-2"
   >
     <hr class="border-0 bg-black h-px" />
-    <input type="text" placeholder="Title" />
-    <input type="text" placeholder="Description" />
+    <input type="text" placeholder="Title" [(ngModel)]="newTitle" />
+    <input type="text" placeholder="Description" [(ngModel)]="newDescription" />
 
     <div class="flex flex-col-1 gap-x-3">
       <button
@@ -31,7 +30,7 @@
         <fa-icon [icon]="faPlus" size="1x"></fa-icon> Add
       </button>
 
-      <button type="submit" (click)="addTask($event)" class="task-cancel-btn">
+      <button type="submit" (click)="hideForm($event)" class="task-cancel-btn">
         Cancel
       </button>
     </div>
