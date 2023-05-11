@@ -5,20 +5,20 @@
     class="border-2 border-gray-400 rounded-md mb-4 px-3 py-4 text-right"
   >
     <div class="text-left">
-      <input type="checkbox" class="peer accent-teal-800" />
+      <input type="checkbox" class="peer accent-teal-800 min-md:w-6 min-md:h-6 min-xl:w-4 min-xl:w-4" />
       <label
-        class="peer-checked:text-gray-600 peer-checked:line-through text-lg font-semibold"
+        class="task font-semibold text-lg min-md:text-3xl min-xl:text-2xl"
       >
         {{ task.title }}
       </label>
       <br />
-      <label class="peer-checked:text-gray-600 peer-checked:line-through">
+      <label class="task text-sm min-md:text-2xl min-xl:text-lg">
         {{ task.description }}
       </label>
     </div>
     <button
       (click)="delete(i)"
-      class="border-2 border-black bg-red-500 px-2 py-1 hover:bg-black hover:text-red-500 uppercase font-semibold"
+      class="delete-btn"
     >
       <fa-icon [icon]="faTrash"></fa-icon>
       Delete
