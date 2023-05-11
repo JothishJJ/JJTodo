@@ -1,13 +1,12 @@
-<!-- TODO: Make a todolist component -->
-<div class="mt-[10vh] px-96">
-  <!-- TODO: implement firebase here and delete this -->
+<div class="mt-[14vh] min-xl:px-96 md:px-6 min-md:px-20">
+  <!-- TODO: implement firebase here and edit this -->
   <app-task [tasks]="tasks"></app-task>
 </div>
 
-<div class="px-96 ">
+<div class="min-xl:px-96 md:px-6 min-md:px-20">
       
   <button
-    class="hover:text-teal-400 pt-1"
+    class="hover:text-teal-400 pt-1 min-md:text-3xl min-xl:text-lg"
     [ngClass]="formBtn ? 'scale-0' : 'scale-100'"
     (click)="addForm()"
   >
@@ -16,7 +15,7 @@
 
   <form
     [ngClass]="!formBtn ? 'scale-0' : 'scale-100'"
-    class="grid grid-cols-1 gap-y-2"
+    class="task-form"
   >
     <hr class="border-0 bg-black h-px" />
     <input 
@@ -52,4 +51,3 @@
 </div>
 
 <!-- TODO: Setup Todo list UI -->
-<p>todolist works!</p>
