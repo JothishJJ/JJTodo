@@ -17,7 +17,7 @@ import {
 export class AppComponent {
   title = 'JJTodo';
 
-  logedIn: boolean = true;
+  logedIn: boolean = false;
   collapsed: boolean = false;
 
   currentPage?: string;

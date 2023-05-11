@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -29,6 +28,7 @@ export class TodolistComponent implements OnInit {
 
   newTitle: string = '';
   newDescription: string = '';
+  showErr: boolean = false;
 
   addTask() {
     const newItem = {
@@ -36,10 +36,17 @@ export class TodolistComponent implements OnInit {
       description: this.newDescription,
     };
 
-    this.tasks.push(newItem);
-    this.newTitle = '';
-    this.newDescription = '';
-    this.formBtn = false;
+    if (this.newTitle !== '') {
+      this.tasks.push(newItem);
+
+      this.newTitle = '';
+      this.newDescription = '';
+
+      this.formBtn = false;
+      this.showErr = false;
+    } else {
+      this.showErr = true;
+    }
   }
 
   hideForm(e: any) {

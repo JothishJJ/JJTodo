@@ -13,7 +13,7 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {}
 
   currentPage?: string;
-  logedIn = true;
+  logedIn = false;
 
   // FA icons
   faApple = faApple;
