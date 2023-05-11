@@ -36,7 +36,7 @@ export class HomePageComponent implements OnInit {
     // For review
     const elementOffset =
       document.querySelector('.review')?.getBoundingClientRect().top || 0;
-    if (scrollPosition > elementOffset - window.innerHeight + 200) {
+    if (scrollPosition > elementOffset - window.innerHeight + 25) {
       this.isReviewVisible = true; // Set the visibility flag to trigger the animation
     } else {
       this.isReviewVisible = false;
@@ -46,7 +46,7 @@ export class HomePageComponent implements OnInit {
     const taskManagementOffset =
       document.querySelector('.task-management')?.getBoundingClientRect().top ||
       0;
-    if (scrollPosition > taskManagementOffset - window.innerHeight + 200) {
+    if (scrollPosition > taskManagementOffset - window.innerHeight + 25) {
       this.isTaskManagementVisible = true; // Set the visibility flag to trigger the animation
     } else {
       this.isTaskManagementVisible = false;
@@ -55,7 +55,7 @@ export class HomePageComponent implements OnInit {
     // For Remeinder
     const remeinderOffset =
       document.querySelector('.remeinder')?.getBoundingClientRect().top || 0;
-    if (scrollPosition > remeinderOffset - window.innerHeight + 200) {
+    if (scrollPosition > remeinderOffset - window.innerHeight + 25) {
       this.isRemeinderVisible = true; // Set the visibility flag to trigger the animation
     } else {
       this.isRemeinderVisible = false;
