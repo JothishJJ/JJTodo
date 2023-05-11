@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -7,7 +8,6 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './todolist.component.html',
   styleUrls: ['./todolist.component.css'],
 })
-
 export class TodolistComponent implements OnInit {
   // TODO: implement firebase and delete this
 
@@ -26,19 +26,19 @@ export class TodolistComponent implements OnInit {
   addForm() {
     this.formBtn = true;
   }
-  
+
   newTitle: string = '';
   newDescription: string = '';
-  
-  addTask(e: any) {    
+
+  addTask() {
     const newItem = {
       title: this.newTitle,
-      description: this.newDescription
+      description: this.newDescription,
     };
-    
+
     this.tasks.push(newItem);
     this.newTitle = '';
-    this.newDescription = ''; 
+    this.newDescription = '';
     this.formBtn = false;
   }
 
@@ -48,5 +48,4 @@ export class TodolistComponent implements OnInit {
     this.formBtn = false;
     e.preventDefault();
   }
-
 }

@@ -47,9 +47,5 @@ export class AppComponent {
         this.currentPage = router.url;
       }
     });
-
-    if(this.logedIn) {
-      router.navigate(['/app']);
-    }
   }
 }
