@@ -13,6 +13,10 @@ export class TaskComponent implements OnInit {
 
   faTrash = faTrash;
 
+  delete(index: number): void {
+    this.tasks?.splice(index, 1);
+  }
+
   constructor() {}
 
   ngOnInit(): void {}
