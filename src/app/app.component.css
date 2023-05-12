@@ -3,7 +3,7 @@
 @layer components {
   .header {
     @apply h-20  bg-teal-600 py-4 top-0 fixed w-full columns-2 
-    min-xl:px-96 xl:px-8;
+    min-xl:px-96 xl:px-8 z-10;
   }
 
   .footer {

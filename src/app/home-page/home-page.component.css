@@ -20,14 +20,14 @@
 .slide-right-transition {
   transition-property: transform;
   transition-timing-function: ease-out;
-  transform: translateX(-100vh);
-  transition-duration: 1.5s;
+  transform: translateX(-200vh);
+  transition-duration: 2.5s;
 }
 
 .slide-left-transition {
   transition-property: transform;
   transition-timing-function: ease-out;
-  transform: translateX(200vh);
+  transform: translateX(400vh);
   transition-duration: 2.5s;
 }
 
