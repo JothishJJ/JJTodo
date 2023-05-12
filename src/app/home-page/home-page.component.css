@@ -16,6 +16,8 @@
     min-xl:text-lg;
   }
 
+  /* feature section */
+
   .feature-content {
     @apply grid grid-cols-1 gap-y-4 xl:text-center 
     xl:px-3;
@@ -28,6 +30,18 @@
   .feature-description {
     @apply text-xl min-md:text-3xl min-xl:text-xl
     sm:text-lg;
+  }
+
+  /* Feedback section */
+
+  .feedback-quote {
+    @apply text-xl min-md:text-4xl min-xl:text-xl 
+    italic font-semibold text-gray-900;
+  }
+
+  .feedback-author {
+    @apply font-medium min-md:text-2xl min-xl:text-sm 
+    text-gray-900;
   }
 }
 
