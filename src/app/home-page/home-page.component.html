@@ -19,7 +19,7 @@
   >Over 1m+ reviews</p>
   <div 
     class="xl:mb-4 slide-right-transition review" 
-    style="transition-duration: 1s;" 
+    style="transition-duration: 1.6s;" 
     [class.slide-right]="isReviewVisible"
   >
     <fa-icon [icon]="faStar" size="lg"></fa-icon>
@@ -31,7 +31,7 @@
   <div 
     class="space-x-4 slide-right-transition review" 
     [class.slide-right]="isReviewVisible"
-    style="transition-duration: 1.2s"
+    style="transition-duration: 1.6s"
   >
     <fa-icon  [icon]="faApple" size="3x"></fa-icon>
     <fa-icon [icon]="faGooglePlay" size="2x"></fa-icon>
@@ -40,31 +40,57 @@
 </div>
 
 <!-- Feature section -->
-<section class="px-96 bg-gray-800 text-teal-400">
+<section class="px-96 bg-gray-800 text-white">
+  
+  <!-- task-management -->
+  <div class="pt-[70vh]"></div>
   <div 
-    class="pt-[70vh] grid grid-col-1 gap-y-4 "
+    class="grid grid-col-1 gap-y-4 "
   >
     <h3 
       class="text-4xl task-management slide-right-transition"
       [class.slide-right]="isTaskManagementVisible"
+      style="transition-duration: 1.6s"
     >Task Management</h3>
     <p 
-      class="text-xl slide-right-transition"
+      class="text-xl task-management slide-right-transition"
       [class.slide-right]="isTaskManagementVisible"
+      style="transition-duration: 1.6s"
     >With an easy and interactive interface JJTodo 
-      allows you to manage your daily tasks with ease.</p>
+      allows <br /> you to manage your daily tasks with ease.</p>
   </div>
+  
+  <!-- Remeinder -->
+  <div class="pt-[70vh]"></div>
   <div
-    class="py-[70vh] grid grid-col-1 gap-y-4 text-right"
+    class="grid grid-col-1 gap-y-4 text-right"
   >
     <h3
       class="text-4xl remeinder slide-left-transition"
       [class.slide-right]="isRemeinderVisible"
     >Remeinder</h3>
     <p
-      class="text-xl slide-left-transition"
+      class="text-xl remeinder slide-left-transition"
       [class.slide-right]="isRemeinderVisible"
     >You never have to forget any important you 
-      might have to do ever with JJTodo.</p>
+      might <br /> have to do ever with JJTodo.</p>
   </div>
+  
+  <!-- productivity -->
+  <div class="pt-[70vh]"></div>
+  <div class="grid grid-col-1 gap-y-4">
+    <h3 
+      class="text-4xl productivity slide-right-transition"
+      [class.slide-right]="isProductivityVisible"
+    >Increased productivity</h3>
+    <p
+      class="text-xl slide-right-transition"
+      [class.slide-right]="isProductivityVisible"
+    >
+      JJTodo helps you break down larger tasks
+      into smaller, <br /> manageable steps, making them 
+      less overwhelming.
+    </p>  
+  </div>
+  <div class="pt-[70vh]"></div>
 </section>

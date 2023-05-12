@@ -21,9 +21,11 @@ export class HomePageComponent implements OnInit {
   faGooglePlay = faGooglePlay;
   faGlobe = faGlobe;
 
+  // For transitions
   isReviewVisible: boolean = false;
   isTaskManagementVisible: boolean = false;
   isRemeinderVisible: boolean = false;
+  isProductivityVisible: boolean = false;
 
   @HostListener('window:scroll')
   onWindowScroll() {
@@ -36,7 +38,7 @@ export class HomePageComponent implements OnInit {
     // For review
     const elementOffset =
       document.querySelector('.review')?.getBoundingClientRect().top || 0;
-    if (scrollPosition > elementOffset - window.innerHeight + 25) {
+    if (scrollPosition > elementOffset - window.innerHeight) {
       this.isReviewVisible = true; // Set the visibility flag to trigger the animation
     } else {
       this.isReviewVisible = false;
@@ -46,7 +48,7 @@ export class HomePageComponent implements OnInit {
     const taskManagementOffset =
       document.querySelector('.task-management')?.getBoundingClientRect().top ||
       0;
-    if (scrollPosition > taskManagementOffset - window.innerHeight + 25) {
+    if (scrollPosition > taskManagementOffset - window.innerHeight) {
       this.isTaskManagementVisible = true; // Set the visibility flag to trigger the animation
     } else {
       this.isTaskManagementVisible = false;
@@ -55,10 +57,19 @@ export class HomePageComponent implements OnInit {
     // For Remeinder
     const remeinderOffset =
       document.querySelector('.remeinder')?.getBoundingClientRect().top || 0;
-    if (scrollPosition > remeinderOffset - window.innerHeight + 25) {
+    if (scrollPosition > remeinderOffset - window.innerHeight) {
       this.isRemeinderVisible = true; // Set the visibility flag to trigger the animation
     } else {
       this.isRemeinderVisible = false;
+    }
+
+    // For Productivity
+    const productivityOffset =
+      document.querySelector('.productivity')?.getBoundingClientRect().top || 0;
+    if (scrollPosition > productivityOffset - window.innerHeight) {
+      this.isProductivityVisible = true;
+    } else {
+      this.isProductivityVisible = false;
     }
   }
 
