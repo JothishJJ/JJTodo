@@ -40,20 +40,20 @@
 </div>
 
 <!-- Feature section -->
-<section class="px-96 bg-gray-800 text-white">
+<section class="min-xl:px-96 bg-gray-800 text-white">
   
   <!-- task-management -->
   <div class="pt-[70vh]"></div>
   <div 
-    class="grid grid-col-1 gap-y-4 "
+    class="feature-content min-xl:text-left"
   >
     <h3 
-      class="text-4xl task-management slide-right-transition"
+      class="feature-title task-management slide-right-transition"
       [class.slide-right]="isTaskManagementVisible"
       style="transition-duration: 1.6s"
     >Task Management</h3>
     <p 
-      class="text-xl task-management slide-right-transition"
+      class="feature-description task-management slide-right-transition"
       [class.slide-right]="isTaskManagementVisible"
       style="transition-duration: 1.6s"
     >With an easy and interactive interface JJTodo 
@@ -63,28 +63,28 @@
   <!-- Remeinder -->
   <div class="pt-[70vh]"></div>
   <div
-    class="grid grid-col-1 gap-y-4 text-right"
+    class="feature-content min-xl:text-right"
   >
     <h3
-      class="text-4xl remeinder slide-left-transition"
+      class="feature-title remeinder slide-left-transition"
       [class.slide-right]="isRemeinderVisible"
     >Remeinder</h3>
     <p
-      class="text-xl remeinder slide-left-transition"
+      class="feature-description remeinder slide-left-transition"
       [class.slide-right]="isRemeinderVisible"
-    >You never have to forget any important you 
+    >You never have to forget any important task you 
       might <br /> have to do ever with JJTodo.</p>
   </div>
   
   <!-- productivity -->
   <div class="pt-[70vh]"></div>
-  <div class="grid grid-col-1 gap-y-4">
+  <div class="feature-content min-xl:text-left">
     <h3 
-      class="text-4xl productivity slide-right-transition"
+      class="feature-title productivity slide-right-transition"
       [class.slide-right]="isProductivityVisible"
     >Increased productivity</h3>
     <p
-      class="text-xl slide-right-transition"
+      class="feature-description slide-right-transition"
       [class.slide-right]="isProductivityVisible"
     >
       JJTodo helps you break down larger tasks
