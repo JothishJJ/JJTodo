@@ -61,6 +61,18 @@ export class AuthService {
     }
   }
 
+  async signInWithEmailAndPassword(email: string, password: string) {
+    try {
+      const credential = await this.afAuth.signInWithEmailAndPassword(
+        email,
+        password
+      );
+      return this.updateUserData(credential.user);
+    } catch (err) {
+      alert(err);
+    }
+  }
+
   async signOut() {
     await this.afAuth.signOut();
     return this.router.navigate(['/']);
