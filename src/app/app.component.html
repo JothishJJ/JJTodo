@@ -17,7 +17,7 @@
         <button class="auth-buttons" routerLink="/signup">Signup</button>
       </ng-template>
       <div *ngIf="auth.user$ | async; else login">
-        <button class="auth-buttons">Log Out</button>
+        <button class="auth-buttons" (click)="auth.signOut()" >Log Out</button>
       </div>
     </div>
   </div>
@@ -32,7 +32,7 @@
     </div>
   </ng-template>
   <div *ngIf="auth.user$ | async; else login">
-    <a class="auth-buttons">Log Out</a>
+    <a class="auth-buttons" (click)="auth.signOut()">Log Out</a>
   </div>
 </div>
 
