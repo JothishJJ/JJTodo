@@ -13,7 +13,6 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {}
 
   currentPage?: string;
-  logedIn = false;
 
   // FA icons
   faApple = faApple;
@@ -79,9 +78,5 @@ export class HomePageComponent implements OnInit {
         this.currentPage = router.url;
       }
     });
-
-    if (this.logedIn) {
-      router.navigate(['/app']);
-    }
   }
 }
