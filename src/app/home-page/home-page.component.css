@@ -49,14 +49,14 @@
   transition-property: transform;
   transition-timing-function: ease-out;
   transform: translateX(-200vh);
-  transition-duration: 2.5s;
+  transition-duration: 2s;
 }
 
 .slide-left-transition {
   transition-property: transform;
   transition-timing-function: ease-out;
   transform: translateX(400vh);
-  transition-duration: 2.5s;
+  transition-duration: 2s;
 }
 
 .slide-right {

@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "jjtodo-206a7": {
+      "hosting": {
+        "JJTodo": [
+          "jjtodo-206a7"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "jjtodo-206a7"
+  }
+}
