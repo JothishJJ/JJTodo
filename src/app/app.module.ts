@@ -14,10 +14,12 @@ import { SignupPageComponent } from './signup-page/signup-page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TodolistComponent } from './todolist/todolist.component';
 import { TaskComponent } from './todolist/task/task.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+
+// Firebase
 import { environment } from '../environments/environment';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 @NgModule({
   declarations: [
@@ -34,9 +36,11 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     FormsModule,
     AppRoutingModule,
     FontAwesomeModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => getAuth()),
-    provideFirestore(() => getFirestore()),
+
+    // Firebase
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFirestoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
