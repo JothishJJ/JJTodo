@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faGoogle, faApple } from '@fortawesome/free-brands-svg-icons';
+import { faGoogle, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-login-page',
@@ -9,7 +9,7 @@ import { faGoogle, faApple } from '@fortawesome/free-brands-svg-icons';
 export class LoginPageComponent implements OnInit {
   // fa icons
   faGoogle = faGoogle;
-  faApple = faApple;
+  faGithub = faGithub;
 
   constructor() {}
 
