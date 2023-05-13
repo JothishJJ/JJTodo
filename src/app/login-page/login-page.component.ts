@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { faGoogle, faGithub } from '@fortawesome/free-brands-svg-icons';
 
+import { AuthService } from '../services/auth.service';
+
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
@@ -11,7 +13,7 @@ export class LoginPageComponent implements OnInit {
   faGoogle = faGoogle;
   faGithub = faGithub;
 
-  constructor() {}
+  constructor(public auth: AuthService) {}
 
   ngOnInit(): void {}
 }

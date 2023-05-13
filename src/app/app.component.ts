@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
+import { AuthService } from './services/auth.service';
+
 // Fa faIcons
 import {
   faInstagram,
@@ -22,7 +24,6 @@ import {
 export class AppComponent {
   title = 'JJTodo';
 
-  logedIn: boolean = false;
   collapsed: boolean = false;
 
   currentPage?: string;
@@ -47,7 +48,7 @@ export class AppComponent {
     this.collapsed = !this.collapsed;
   }
 
-  constructor(private router: Router) {
+  constructor(private router: Router, public auth: AuthService) {
     router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
         this.currentPage = router.url;
