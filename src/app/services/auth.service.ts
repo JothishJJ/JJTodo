@@ -40,9 +40,25 @@ export class AuthService {
   }
 
   async googleSignin() {
-    const provider = new auth.GoogleAuthProvider();
-    const credential = await this.afAuth.signInWithPopup(provider);
-    return this.updateUserData(credential.user);
+    try {
+      const provider = new auth.GoogleAuthProvider();
+      const credential = await this.afAuth.signInWithPopup(provider);
+      return this.updateUserData(credential.user);
+    } catch (err) {
+      alert(err);
+    }
+  }
+
+  async signUpWithEmailAndPassword(email: string, password: string) {
+    try {
+      const credential = await this.afAuth.createUserWithEmailAndPassword(
+        email,
+        password
+      );
+      return this.updateUserData(credential.user);
+    } catch (err: any) {
+      alert(err);
+    }
   }
 
   async signOut() {
