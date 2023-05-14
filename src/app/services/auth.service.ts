@@ -89,6 +89,14 @@ export class AuthService {
     }
   }
 
+  async sendPasswordResetLink(email: string) {
+    try {
+      return this.afAuth.sendPasswordResetEmail(email);
+    } catch (err) {
+      alert(err);
+    }
+  }
+
   async signOut() {
     await this.afAuth.signOut();
     return this.router.navigate(['/']);
