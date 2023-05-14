@@ -4,14 +4,14 @@ import { Router, NavigationEnd } from '@angular/router';
 import { faApple, faGooglePlay } from '@fortawesome/free-brands-svg-icons';
 import { faGlobe, faStar } from '@fortawesome/free-solid-svg-icons';
 
+import { AuthService } from '../services/auth.service';
+
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent implements OnInit {
-  ngOnInit(): void {}
-
   currentPage?: string;
 
   // FA icons
@@ -72,11 +72,15 @@ export class HomePageComponent implements OnInit {
     }
   }
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private auth: AuthService) {
     router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
         this.currentPage = router.url;
       }
     });
+  }
+
+  ngOnInit(): void {
+    this.auth.isUserSignedIn();
   }
 }

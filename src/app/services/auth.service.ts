@@ -22,6 +22,8 @@ import { User } from './user.model';
 export class AuthService {
   user$: Observable<User> | null;
 
+  isSignedIn?: boolean;
+
   constructor(
     private afAuth: AngularFireAuth,
     private afs: AngularFirestore,
@@ -37,6 +39,14 @@ export class AuthService {
         }
       })
     );
+  }
+
+  isUserSignedIn() {
+    this.afAuth.authState.subscribe((user) => {
+      if (user) {
+        this.router.navigate(['/app']);
+      }
+    });
   }
 
   async googleSignin() {
