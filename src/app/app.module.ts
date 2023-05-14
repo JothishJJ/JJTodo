@@ -21,6 +21,7 @@ import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     SignupPageComponent,
     TodolistComponent,
     TaskComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,
