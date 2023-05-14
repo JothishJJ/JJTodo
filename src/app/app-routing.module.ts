@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'login', component: LoginPageComponent },
   { path: 'signup', component: SignupPageComponent },
   { path: 'app', component: TodolistComponent, canActivate: [AuthGuard] },
-  { path: 'forgot-password', component: ForgotPasswordComponent }
+  { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: '**', component: PageNotFoundComponent },
 ];
 
