@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
 
 @layer components {
   .auth-buttons {
@@ -15,6 +15,141 @@
     min-md:text-4xl min-xl:text-lg 
     min-xl:py-0 min-xl:h-10 sm:py-0
     sm:h-10;
+  }
+  .title {
+    @apply min-md:text-8xl min-xl:text-6xl font-display font-bold text-black 
+    mt-[35vh] min-md:mb-[20vh] min-xl:mb-0 min-xl:px-40 xl:px-8 text-4xl;
+  }
+
+  .description {
+    @apply min-md:text-3xl min-xl:text-xl sm:text-sm xl:mt-20 mt-16 min-xl:px-72 min-md:px-40 px-8;
+  }
+
+  .review-section {
+    @apply bg-teal-100 min-xl:px-96 py-16 text-center 
+    min-xl:columns-2 xl:mt-20 min-xl:mt-40 min-md:text-4xl
+    min-xl:text-lg;
+  }
+
+  /* feature section */
+
+  .feature-content {
+    @apply grid grid-cols-1 gap-y-4 xl:text-center 
+    xl:px-3;
+  }
+
+  .feature-title {
+    @apply text-4xl min-md:text-6xl min-xl:text-4xl;
+  }
+
+  .feature-description {
+    @apply text-xl min-md:text-3xl min-xl:text-xl
+    sm:text-lg;
+  }
+
+  /* Feedback section */
+
+  .feedback-quote {
+    @apply text-xl min-md:text-4xl min-xl:text-xl 
+    italic font-semibold text-gray-900;
+  }
+
+  .feedback-author {
+    @apply font-medium min-md:text-2xl min-xl:text-sm 
+    text-gray-900;
+  }
+
+  /* Auth Page */
+  .sign-btn {
+    @apply border-2 border-black text-2xl py-1 tracking-wider 
+    min-md:text-4xl min-xl:text-2xl
+    min-md:py-3 min-xl:py-1
+    text-black m-1 font-semibold
+    transition hover:ease-in
+    hover:bg-black hover:text-teal-400;
+  }
+
+  .input {
+    @apply h-8 px-1 border-2 min-md:text-4xl min-xl:text-lg min-md:h-24 min-xl:h-8;
+  }
+
+  .heading {
+    @apply text-5xl min-xl:text-5xl min-md:text-8xl min-xl:py-32 xl:pt-32 xl:pb-16;
+  }
+
+  .login-section {
+    @apply min-xl:grid min-xl:grid-cols-2 mt-4 mb-24 
+    min-xl:gap-y-2 xl:gap-y-4;
+  }
+
+  .second-heading {
+    @apply xl:scale-0 text-5xl mt-16 text-center  font-display;
+  }
+
+  .label {
+    @apply min-md:text-4xl min-xl:text-lg;
+  }
+
+  .forgot-password {
+    @apply text-sm my-4 hover:underline min-md:text-2xl min-md:my-8 min-xl:my-4 min-xl:text-sm;
+  }
+
+  .signup-section {
+    @apply min-xl:grid min-xl:grid-cols-2 mt-4 mb-24 
+    min-xl:gap-y-2 xl:gap-y-4;
+  }
+
+  /* TodoList */
+
+  .task-cancel-btn {
+    @apply border-2 border-black bg-white hover:bg-black 
+    hover:text-white px-4;
+  }
+
+  .task-add-btn {
+    @apply border-2 border-black bg-teal-500 hover:bg-black 
+    hover:text-teal-500 px-4;
+  }
+
+  .task-form {
+    @apply grid grid-cols-1 gap-y-2 min-md:gap-y-4 
+    min-xl:gap-y-2 min-xl:text-lg min-md:text-3xl;
+  }
+
+  /* Tasks */
+  .delete-btn {
+    @apply border-2 border-black bg-red-500 px-2 
+    py-1 hover:bg-black hover:text-red-500 
+    uppercase font-semibold;
+  }
+
+  .task {
+    @apply peer-checked:text-gray-600 peer-checked:line-through;
+  }
+
+  /* Header and Footer */
+  .header {
+    @apply h-20  bg-teal-600 py-4 top-0 fixed w-full columns-2 
+    min-xl:px-96 xl:px-8 z-10;
+  }
+
+  .footer {
+    @apply bg-gray-100 h-48 text-center w-full min-xl:px-96
+    py-16 xl:px-8;
+  }
+
+  .logo {
+    @apply text-white text-4xl pt-1 xl:pt-0 font-display;
+  }
+
+  .mobile-section {
+    @apply bg-teal-100 pt-[40vh] h-screen min-xl:scale-0 
+    text-center text-3xl px-16;
+  }
+
+  .back-to-top-btn {
+    @apply bg-teal-400 border-2 border-black p-2 
+    hover:text-teal-400 hover:bg-black hover:cursor-pointer;
   }
 }
 
