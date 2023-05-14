@@ -4,41 +4,39 @@
     <div class="h-screen">
       <div class="signup-section">
         <div class="text-left grid grid-cols-1 min-xl:px-20">
-          <label for="user-name" class="label">User name</label>
-          <input
-            type="text"
-            id="user-name"
-            placeholder="Your name"
-            class="input"
-          />
-
-          <br />
 
           <label for="email" class="label">Email</label>
           <input
             type="emai"
             id="email"
+            [(ngModel)]="email"
+            name="email"
             placeholder="example@example.com"
             class="input"
           />
-
           <br />
 
-          <label for="password" class="label">Password</label>
+          <label for="password" class="label" >Password</label>
           <input
             type="password"
             id="password"
+            [(ngModel)]="password"
+            name="password"
             placeholder="·······"
             class="input mb-4"
           />
 
-          <button type="submit" class="mt-16 mb-4 sign-btn bg-teal-500">
+          <button 
+            type="submit" 
+            class="mt-16 mb-4 sign-btn bg-teal-500" 
+            (click)="signUpWithEmail($event)"
+          >
             SUBMIT
           </button>
 
           <hr class="h-px my-8 border-0 bg-gray-400 min-md:my-16 min-xl:my-4" />
 
-          <button class="sign-btn bg-white">
+          <button class="sign-btn bg-white" (click)="auth.googleSignin()" >
             <fa-icon [icon]="faGoogle" class="text-blue-500"></fa-icon> Signup
             with Google
           </button>

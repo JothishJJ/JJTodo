@@ -12,12 +12,12 @@
 
     <!-- Default auth buttons -->
     <div class="xl:scale-0 text-right">
-      <div *ngIf="!logedIn">
+      <ng-template #login>
         <button class="auth-buttons" routerLink="/login">Login</button>
         <button class="auth-buttons" routerLink="/signup">Signup</button>
-      </div>
-      <div *ngIf="logedIn">
-        <button class="auth-buttons">Log Out</button>
+      </ng-template>
+      <div *ngIf="auth.user$ | async; else login">
+        <button class="auth-buttons" (click)="auth.signOut()" >Log Out</button>
       </div>
     </div>
   </div>
@@ -25,12 +25,14 @@
 
 <!-- mobile nav -->
 <div id="menu" class="mobile-section" *ngIf="collapsed">
-  <div *ngIf="!logedIn" class="grid grid-rows-1 gap-y-8">
-    <a class="auth-buttons" routerLink="/login" (click)="collapse()">Login</a>
-    <a class="auth-buttons" routerLink="/signup" (click)="collapse()">Signup</a>
-  </div>
-  <div *ngIf="logedIn">
-    <a class="auth-buttons">Log Out</a>
+  <ng-template #login>
+    <div class="grid grid-rows-1 gap-y-8">
+      <a class="auth-buttons" routerLink="/login" (click)="collapse()">Login</a>
+      <a class="auth-buttons" routerLink="/signup" (click)="collapse()">Signup</a>
+    </div>
+  </ng-template>
+  <div *ngIf="auth.user$ | async; else login">
+    <a class="auth-buttons" (click)="auth.signOut()">Log Out</a>
   </div>
 </div>
 

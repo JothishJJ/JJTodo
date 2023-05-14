@@ -8,6 +8,8 @@
           <input
             type="emai"
             id="email"
+            [(ngModel)]="email"
+            name="email"
             placeholder="example@example.com"
             class="input"
           />
@@ -18,23 +20,29 @@
           <input
             type="password"
             id="password"
+            [(ngModel)]="password"
+            name="password"
             placeholder="·······"
             class="input"
           />
 
           <a
-            href="#"
+            routerLink='/forgot-password'
             class="forgot-password"
             >Forgot password?</a
           >
 
-          <button type="submit" class="mt-16 mb-4 sign-btn bg-teal-500">
+          <button 
+            type="submit" 
+            class="mt-6 mb-4 sign-btn bg-teal-500"
+            (click)="signInWithEmail($event)"
+          >
             SUBMIT
           </button>
 
           <hr class="h-px my-8 border-0 bg-gray-400 min-md:my-16 min-xl:my-4" />
 
-          <button class="sign-btn bg-white">
+          <button class="sign-btn bg-white" (click)="auth.googleSignin()">
             <fa-icon [icon]="faGoogle" class="text-blue-500"></fa-icon> Login
             with Google
           </button>
