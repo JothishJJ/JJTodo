@@ -40,7 +40,10 @@
             <fa-icon [icon]="faGoogle" class="text-blue-500"></fa-icon> Signup
             with Google
           </button>
-          <button class="sign-btn bg-white group">
+          <button 
+            class="sign-btn bg-white group"
+            (click)="auth.githubSignin()"
+          >
             <fa-icon [icon]="faGithub" class="group-hover:text-white"></fa-icon>
             Signup with Github
           </button>
