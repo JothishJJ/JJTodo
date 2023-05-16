@@ -61,6 +61,18 @@ export class AuthService {
     }
   }
 
+  async githubSignin() {
+    try {
+      const provider = new auth.GithubAuthProvider();
+      const credential = await this.afAuth.signInWithPopup(provider);
+      return this.updateUserData(credential.user).then(() => {
+        this.router.navigate(['/app']);
+      });
+    } catch (err) {
+      alert(err);
+    }
+  }
+
   async signUpWithEmailAndPassword(email: string, password: string) {
     try {
       const credential = await this.afAuth.createUserWithEmailAndPassword(
