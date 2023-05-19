@@ -15,12 +15,17 @@ import { Timestamp } from 'firebase/firestore';
 export class TasklistService {
   private user: any;
   private collectionRef?: AngularFirestoreCollection<Task>;
+  public todoitems?: any;
 
   constructor(private afs: AngularFirestore, private afAuth: AngularFireAuth) {
     this.afAuth.authState.subscribe((user) => {
       if (user) {
         this.user = user;
-        this.collectionRef = this.afs.collection(`todolist/${user.uid}/tasks`);
+        this.collectionRef = this.afs.collection(
+          `todolist/${user.uid}/tasks`,
+          (ref) => ref.orderBy('creationTime')
+        );
+        this.todoitems = this.collectionRef.valueChanges();
       }
     });
   }

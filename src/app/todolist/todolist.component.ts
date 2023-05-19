@@ -12,10 +12,6 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 export class TodolistComponent implements OnInit {
   // TODO: implement firebase and delete this
 
-  tasks: any[] = [
-    { title: 'Hello' },
-    { title: '2nd task', description: 'ufoiafiajiofdjaiodfj asid' },
-  ];
   faPlus = faPlus;
 
   formBtn?: boolean;
