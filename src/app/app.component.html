@@ -1,4 +1,4 @@
-<!-- Header -->
+<!-- Navbar -->
 <nav>
   <div class="header">
     <p class="logo">
@@ -6,7 +6,8 @@
     </p>
     <div class="text-right min-xl:hidden">
       <button class="pt-1" data-collapse-toggle="menu" (click)="collapse()">
-        <fa-icon [icon]="faBars" size="2x"></fa-icon>
+        <fa-icon *ngIf="!collapsed" [icon]="faBars" size="2x"></fa-icon>
+        <fa-icon *ngIf="collapsed" [icon]="faMinus" size="2x"></fa-icon>
       </button>
     </div>
 
@@ -24,20 +25,28 @@
 </nav>
 
 <!-- mobile nav -->
-<div id="menu" class="mobile-section" *ngIf="collapsed">
-  <ng-template #login>
-    <div class="grid grid-rows-1 gap-y-8">
+<div 
+  id="menu" 
+  class="mobile-section" 
+  [@openClose]
+  *ngIf="collapsed" 
+>
+  <ng-template #login >
+    <div class="grid grid-rows-1 gap-y-8 mob-btn" >
       <a class="auth-buttons" routerLink="/login" (click)="collapse()">Login</a>
       <a class="auth-buttons" routerLink="/signup" (click)="collapse()">Signup</a>
     </div>
   </ng-template>
-  <div *ngIf="auth.user$ | async; else login">
+  <div *ngIf="auth.user$ | async; else login" class="mob-btn">
     <a class="auth-buttons" (click)="auth.signOut()">Log Out</a>
   </div>
+  
+  <hr class="h-px my-8 border-0 bg-gray-400 min-md:my-8 min-xl:my-2" />
+
 </div>
 
 <!-- Main -->
-<main *ngIf="!collapsed">
+<main [class]="collapsed ? 'bg-green-50 blur-lg pt-4' : '' ">
   <router-outlet></router-outlet>
 </main>
 

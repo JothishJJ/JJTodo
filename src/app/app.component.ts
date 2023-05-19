@@ -1,5 +1,12 @@
 import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import {
+  trigger,
+  style,
+  transition,
+  animate,
+  query,
+} from '@angular/animations';
 
 import { AuthService } from './services/auth.service';
 
@@ -14,12 +21,31 @@ import {
   faClipboardCheck,
   faArrowUp,
   faBars,
+  faMinus,
 } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  animations: [
+    trigger('openClose', [
+      transition(':enter', [
+        query(':enter', [
+          style({ height: '0', scale: 0 }),
+          animate('200ms ease-in'),
+          style({ height: '80vh', scale: 100 }),
+        ]),
+      ]),
+      transition(':leave', [
+        query(':leave', [
+          style({ height: '80vh', opacity: 100 }),
+          animate('100ms ease-in'),
+          style({ height: '0', opacity: '0%' }),
+        ]),
+      ]),
+    ]),
+  ],
 })
 export class AppComponent {
   title = 'JJTodo';
@@ -35,6 +61,7 @@ export class AppComponent {
   faArrowUp = faArrowUp;
   faBars = faBars;
   faGithub = faGithub;
+  faMinus = faMinus;
 
   scroll(): void {
     window.scroll({
@@ -46,6 +73,11 @@ export class AppComponent {
 
   collapse() {
     this.collapsed = !this.collapsed;
+    if (this.collapsed) {
+      document.getElementById('body')?.classList.add('no-scroll');
+    } else {
+      document.getElementById('body')?.classList.remove('no-scroll');
+    }
   }
 
   constructor(private router: Router, public auth: AuthService) {
