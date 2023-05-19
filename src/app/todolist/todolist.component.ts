@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { TasklistService } from '../services/tasklist.service';
+
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -18,7 +20,7 @@ export class TodolistComponent implements OnInit {
 
   formBtn?: boolean;
 
-  constructor() {}
+  constructor(public tasklist: TasklistService) {}
 
   ngOnInit(): void {}
 
@@ -31,13 +33,8 @@ export class TodolistComponent implements OnInit {
   showErr: boolean = false;
 
   addTask() {
-    const newItem = {
-      title: this.newTitle,
-      description: this.newDescription,
-    };
-
     if (this.newTitle !== '') {
-      this.tasks.push(newItem);
+      this.tasklist.addTask(this.newTitle, this.newDescription);
 
       this.newTitle = '';
       this.newDescription = '';
