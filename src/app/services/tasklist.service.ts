@@ -33,23 +33,23 @@ export class TasklistService {
   // @ts-ignore
   async addTask(title: string, description?: string) {
     try {
-      return this.collectionRef?.add({
+      const id = this.afs.createId();
+      const docRef = this.collectionRef?.doc(id);
+      return docRef?.set({
+        id: id,
         creationTime: Timestamp.now(),
         title: title,
         description: description,
-        completed: false,
       });
     } catch (err) {
       alert(err);
     }
   }
 
-  async check(task: any) {}
-
-  async deleteTask(title: string) {
+  async deleteTask(id: string) {
     const taskRef = this.afs.collection(
       `todolist/${this.user.uid}/tasks`,
-      (ref) => ref.where('title', '==', title)
+      (ref) => ref.where('id', '==', id)
     );
     return taskRef.get().forEach((querySnapshot) => {
       querySnapshot.forEach((docs) => {
