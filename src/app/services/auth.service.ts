@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 // Firebase
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import * as auth from 'firebase/auth';
+import { GoogleAuthProvider, GithubAuthProvider } from 'firebase/auth';
 import {
   AngularFirestore,
   AngularFirestoreDocument,
@@ -51,7 +51,7 @@ export class AuthService {
 
   async googleSignin() {
     try {
-      const provider = new auth.GoogleAuthProvider();
+      const provider = new GoogleAuthProvider();
       const credential = await this.afAuth.signInWithPopup(provider);
       return this.updateUserData(credential.user).then(() => {
         this.router.navigate(['/app']);
@@ -63,7 +63,7 @@ export class AuthService {
 
   async githubSignin() {
     try {
-      const provider = new auth.GithubAuthProvider();
+      const provider = new GithubAuthProvider();
       const credential = await this.afAuth.signInWithPopup(provider);
       return this.updateUserData(credential.user).then(() => {
         this.router.navigate(['/app']);

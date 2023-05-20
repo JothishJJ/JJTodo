@@ -1,6 +1,6 @@
 <div class="mt-[14vh] min-xl:px-96 md:px-6 min-md:px-20">
   <!-- TODO: implement firebase here and edit this -->
-  <app-task [tasks]="tasks"></app-task>
+  <app-task></app-task>
 </div>
 
 <div class="min-xl:px-96 md:px-6 min-md:px-20">
@@ -10,7 +10,7 @@
     [ngClass]="formBtn ? 'scale-0' : 'scale-100'"
     (click)="addForm()"
   >
-    <fa-icon [icon]="faPlus" size="1x"></fa-icon> Add Task
+    <fa-icon [icon]="faPlus" size="1x"></fa-icon> Add Todo
   </button>
 
   <form

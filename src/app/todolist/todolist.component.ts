@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { TasklistService } from '../services/tasklist.service';
+
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -10,15 +12,11 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 export class TodolistComponent implements OnInit {
   // TODO: implement firebase and delete this
 
-  tasks: any[] = [
-    { title: 'Hello' },
-    { title: '2nd task', description: 'ufoiafiajiofdjaiodfj asid' },
-  ];
   faPlus = faPlus;
 
   formBtn?: boolean;
 
-  constructor() {}
+  constructor(public tasklist: TasklistService) {}
 
   ngOnInit(): void {}
 
@@ -31,13 +29,8 @@ export class TodolistComponent implements OnInit {
   showErr: boolean = false;
 
   addTask() {
-    const newItem = {
-      title: this.newTitle,
-      description: this.newDescription,
-    };
-
     if (this.newTitle !== '') {
-      this.tasks.push(newItem);
+      this.tasklist.addTask(this.newTitle, this.newDescription);
 
       this.newTitle = '';
       this.newDescription = '';
