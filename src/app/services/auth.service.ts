@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 
 // Firebase
 import { AngularFireAuth } from '@angular/fire/compat/auth';
-import { GoogleAuthProvider, GithubAuthProvider, sendEmailVerification, getAuth } from 'firebase/auth';
+import { GoogleAuthProvider, GithubAuthProvider } from 'firebase/auth';
 import {
   AngularFirestore,
   AngularFirestoreDocument,
@@ -21,7 +21,6 @@ import { User } from './user.model';
 })
 export class AuthService {
   user$: Observable<User> | null;
-  auth = getAuth();
 
   isSignedIn?: boolean;
 
@@ -49,35 +48,6 @@ export class AuthService {
         this.router.navigate(['/app']);
       }
     });
-  }
-
-  isVerified() {
-    this.afAuth.authState.subscribe((user) => {
-      if (user && !user.emailVerified) {
-        this.router.navigate(['/verify-email']);
-      }
-    })
-  }
-  
-  verified() {
-    this.afAuth.authState.subscribe((user) => {
-      if(user && user.emailVerified) {
-        this.router.navigate(['/app'])
-      }
-    })
-  }
-  
-  async verifyEmail() {
-    try {
-    if(this.auth.currentUser) {
-      sendEmailVerification(this.auth.currentUser).then(() => {
-        alert("Email sent! also check spam")
-        alert("Refresh the page after verification")
-      });
-    }
-    } catch(err) {
-      alert(err);
-    }
   }
 
   async googleSignin() {
@@ -143,21 +113,6 @@ export class AuthService {
   async signOut() {
     await this.afAuth.signOut();
     return this.router.navigate(['/']);
-  }
-
-  async completeSignOut() {
-    try {
-    // @ts-ignore 
-    this.afAuth.authState.subscribe(user => {
-      if(user) {
-        return user.delete().then(() => {
-          this.router.navigate(['/signup'])
-        })
-      }
-    })
-    } catch(err) {
-      alert(err);
-    }
   }
 
   private updateUserData(user: any) {

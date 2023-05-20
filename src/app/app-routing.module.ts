@@ -7,7 +7,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { TodolistComponent } from './todolist/todolist.component';
 import { AuthGuard } from './services/auth.guard';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { VerifyEmailComponent } from './verify-email/verify-email.component';
 
 const routes: Routes = [
   // Redirects
@@ -19,11 +18,6 @@ const routes: Routes = [
   { path: 'signup', component: SignupPageComponent },
   { path: 'app', component: TodolistComponent, canActivate: [AuthGuard] },
   { path: 'forgot-password', component: ForgotPasswordComponent },
-  {
-    path: 'verify-email',
-    component: VerifyEmailComponent,
-    canActivate: [AuthGuard],
-  },
   { path: '**', component: PageNotFoundComponent },
 ];
 
