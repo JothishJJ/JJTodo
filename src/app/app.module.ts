@@ -23,7 +23,6 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { VerifyEmailComponent } from './verify-email/verify-email.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +34,6 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
     TodolistComponent,
     TaskComponent,
     ForgotPasswordComponent,
-    VerifyEmailComponent,
   ],
   imports: [
     BrowserModule,
