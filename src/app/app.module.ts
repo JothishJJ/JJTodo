@@ -23,7 +23,6 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -48,15 +47,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
     AngularFirestoreModule,
-
-    ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production,
-      // Register the ServiceWorker as soon as the application is stable
-      // or after 30 seconds (whichever comes first).
-      registrationStrategy: 'registerWhenStable:30000',
-    }),
   ],
-  // schemas: [],
   providers: [],
   bootstrap: [AppComponent],
 })
