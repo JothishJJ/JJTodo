@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { TasklistService } from '../services/tasklist.service';
 
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-todolist',
@@ -14,9 +15,11 @@ export class TodolistComponent implements OnInit {
 
   formBtn?: boolean;
 
-  constructor(public tasklist: TasklistService) {}
+  constructor(public tasklist: TasklistService, public auth: AuthService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.auth.isVerified();
+  }
 
   addForm() {
     this.formBtn = true;

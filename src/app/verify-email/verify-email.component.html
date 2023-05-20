@@ -1,0 +1,16 @@
+<head>
+  <title>Verify email</title>
+</head>
+<div class="mt-24 text-center h-[70vh] ">
+  <h2 class="text-2xl">Verify your email to continue...</h2>
+  <p>Not you email?
+    <a 
+      class="hover:cursor-pointer hover:text-underline text-teal-600" 
+      (click)="auth.completeSignOut()">Sign In
+    </a>
+  </p>
+  <button 
+   class="auth-buttons mt-[20vh]" 
+   (click)="auth.verifyEmail()"
+  >Verify email</button>
+</div>
