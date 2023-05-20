@@ -10,8 +10,6 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./todolist.component.css'],
 })
 export class TodolistComponent implements OnInit {
-  // TODO: implement firebase and delete this
-
   faPlus = faPlus;
 
   formBtn?: boolean;
