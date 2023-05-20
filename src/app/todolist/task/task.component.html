@@ -1,6 +1,6 @@
 <ul>
   <li
-    *ngFor="let task of tasklist.todoitems | async; let i=index"
+    *ngFor="let task of tasklist.todoitems | async"
     class="border-2 border-gray-400 rounded-md mb-4 px-3 py-4 text-right"
   >
     <div class="text-left">
@@ -16,7 +16,7 @@
       </label>
     </div>
     <button
-      (click)="delete(i)"
+      (click)="tasklist.deleteTask(task.title)"
       class="delete-btn"
     >
       <fa-icon [icon]="faTrash"></fa-icon>

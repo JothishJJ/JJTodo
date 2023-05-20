@@ -12,10 +12,6 @@ import { TasklistService } from '../../services/tasklist.service';
 export class TaskComponent implements OnInit {
   faTrash = faTrash;
 
-  delete(index: number): void {
-    // this.tasks?.splice(index, 1);
-  }
-
   constructor(public tasklist: TasklistService) {}
 
   ngOnInit(): void {}

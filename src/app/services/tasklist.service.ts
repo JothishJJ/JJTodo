@@ -43,4 +43,18 @@ export class TasklistService {
       alert(err);
     }
   }
+
+  async check(task: any) {}
+
+  async deleteTask(title: string) {
+    const taskRef = this.afs.collection(
+      `todolist/${this.user.uid}/tasks`,
+      (ref) => ref.where('title', '==', title)
+    );
+    return taskRef.get().forEach((querySnapshot) => {
+      querySnapshot.forEach((docs) => {
+        docs.ref.delete();
+      });
+    });
+  }
 }
